@@ -1,13 +1,15 @@
+import React from 'react';
+import AppRouter from './Routers/AppRouter';
+import './App.css';
 
-import Home from './pages/Home'
-import './App.css'
 
 function App() {
-
   return (
-    <Home/>
+    <>
      
-  )
+      <AppRouter />;
+    </>
+  );
 }
 
-export default App
+export default App;

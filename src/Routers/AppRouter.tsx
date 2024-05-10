@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const AppRouter = () => {
   return (
@@ -13,6 +14,7 @@ const AppRouter = () => {
         <Route path="/company" element={"company"} />
         <Route path="/blogs" element={"blog"} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 };

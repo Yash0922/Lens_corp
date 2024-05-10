@@ -1,9 +1,10 @@
 
 import React, { useState } from "react";
-import { Box, Text, Button, Heading, Image,AspectRatio  } from "@chakra-ui/react";
+import { Box, Text, Button, Heading, Image,AspectRatio,FormControl,Input
+    } from "@chakra-ui/react";
 import { css, keyframes } from '@emotion/react';
 import { ArrowForwardIcon,CheckIcon} from "@chakra-ui/icons";
-import { color, transform } from "framer-motion";
+
 import  GroupIcon  from '../assets/groupIcon.svg';
 import  SecurityIcon  from '../assets/securityIcon.svg';
 import  WeightIcon  from '../assets/WeightIIcon.svg';
@@ -14,6 +15,20 @@ const imageAnimation2 = keyframes`0% { opacity: 0; } 25% { opacity: 0; } 50% { o
 const imageAnimation3 = keyframes`0% { opacity: 0; } 25% { opacity: 0; } 50% { opacity: 1; } 75% { opacity: 0; } 100% { opacity: 0; }`;
  const imageAnimation4 = keyframes`0% { opacity: 0; } 25% { opacity: 0; } 50% { opacity: 0; } 75% { opacity: 0; } 100% { opacity: 1; }`;
 
+ const slideAnimation = keyframes`
+  0%, 20%, 90%, 100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  54% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  56% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+`;
 function Home(props) {
   const [isHovered, setIsHovered] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
@@ -765,6 +780,73 @@ function Home(props) {
                 </Box>
               </Box>
           </Box>
+      </Box>
+      <Box className="EigthContainer" textAlign={"center"} p={"0 2rem 5rem"} overflow={"hidden"} bg={"#fcfbf7"}>
+        <Heading as={"h1"} textAlign={"center"} fontFamily={"Raleway,sans-serif"} fontSize={"32px"} fontWeight={"500"} m={"0 0 4rem"}>We Work With Amazing Clients</Heading>
+        <Box display={"flex"} flexDirection={"row"} justifyContent={"center"} overflow={"hidden"} gap={"2rem"}
+         css={css`
+         animation: ${slideAnimation} 12s linear infinite;
+       `}
+        >
+                    <Box><Image src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FCo_1.ad2ee302.png&w=256&q=75"/></Box>
+                    <Box><Image src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FCo_3.37f82c98.png&w=256&q=75"/></Box>
+                    <Box><Image src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FCo_2.7e06895b.png&w=256&q=75"/></Box>
+                    <Box><Image src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgrov.97a72987.png&w=128&q=75"/></Box>
+                    
+        </Box>
+      </Box>
+      <Box className="NingthContainer" fontFamily={"'Poppins'"} bg={"#272e5c"} display={"flex"} flexDirection={"column"} w={"100%"} justifyContent={"center"} p={"4rem 0"}>
+                    <Box className="BY_number_" color={"#fff"} textAlign={"center"} fontSize={"32px"} mb={"2.5rem"}>
+                    By the numbers
+                    </Box>
+                    <Box className="BY_number_components" display={"flex"} w={"70%"} mx={"auto"} justifyContent={"space-around"} alignItems={"center"}>
+                      <Box display={"flex"} gap={"10px"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}>
+                        <Box display={"flex"} justifyContent={"center"} alignItems={"baseline"} gap={"2px"}>
+                              <Text as={"span"} color={"#fff"} textAlign={"center"} fontSize={"40px"} fontWeight={"500"} lineHeight={"100%"}>15</Text>
+                              <Text as={"span"} color={"#0091ff"} fontFamily={"Roboto"} textAlign={"center"} fontSize={"40px"} fontWeight={"500"} lineHeight={"100%"}>+</Text>
+                        </Box>
+                        <Box color={"#fff"} textAlign={"center"} fontSize={"18px"} lineHeight={"140%"} w={"70%"}>
+                        Solutions for Global crises
+                        </Box>
+                      </Box>
+                      <Box className="Hoz_line"w={"2px"} h={"116px"} bg={"linear-gradient(90deg,#fff,hsla(0,0%,100%,0))"}></Box>
+                      <Box display={"flex"} gap={"10px"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}>
+                        <Box display={"flex"} justifyContent={"center"} alignItems={"baseline"} gap={"2px"}>
+                              <Text as={"span"} color={"#fff"} textAlign={"center"} fontSize={"40px"} fontWeight={"500"} lineHeight={"100%"}>10</Text>
+                              <Text as={"span"} color={"#0091ff"} fontFamily={"Roboto"} textAlign={"center"} fontSize={"40px"} fontWeight={"500"} lineHeight={"100%"}>+</Text>
+                        </Box>
+                        <Box color={"#fff"} textAlign={"center"} fontSize={"18px"} lineHeight={"140%"} w={"70%"}>
+                        University Collaborations
+                        </Box>
+                      </Box>
+                      <Box className="Hoz_line"w={"2px"} h={"116px"} bg={"linear-gradient(90deg,#fff,hsla(0,0%,100%,0))"}></Box>
+                      <Box display={"flex"} gap={"10px"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}>
+                        <Box display={"flex"} justifyContent={"center"} alignItems={"baseline"} gap={"2px"}>
+                              <Text as={"span"} color={"#fff"} textAlign={"center"} fontSize={"40px"} fontWeight={"500"} lineHeight={"100%"}>25</Text>
+                              <Text as={"span"} color={"#0091ff"} fontFamily={"Roboto"} textAlign={"center"} fontSize={"40px"} fontWeight={"500"} lineHeight={"100%"}>+</Text>
+                        </Box>
+                        <Box color={"#fff"} textAlign={"center"} fontSize={"18px"} lineHeight={"140%"} w={"70%"}>
+                        Employees Worldwide
+                        </Box>
+                      </Box>
+                    </Box>
+      </Box>
+      <Box className="EleventhContainer" display={"flex"}  bg={"#fcfbf7"} fontFamily={"'Poppins'"}>
+                      <Box display={"flex"} flexDirection={"column"} alignItems={"flex-start"} w={"50%"} p={"5rem 5rem 5rem 7rem"} bg={"#fcfbf7"} justifyContent={"center"} >
+                          <Heading fontFamily={"Raleway,sans-serif"} w={"70%"} as={"h2"} fontSize={"56px"} mb={"1rem"} lineHeight={"66.102px"} fontWeight={500}>Get in touch with us</Heading>
+                          <Text fontSize={"17.488px"} fontFamily={"'Poppins'"} letterSpacing={".525px"} mb={"2rem"}>Send your enquiry now!</Text>
+                          <FormControl display={"flex"} bg={"#ededed"} w={"80%"} alignItems={"center"} justifyContent={"space-between"} p={"4.034px 4.034px 4.034px 20.172px"} borderRadius={"26.897px"}>
+                          <Input type='email'  placeholder='Enter email address' name="email" outline={"none"} bg={"transparent"} borderRadius={"4px 0 0 4px"} border={"1px solid transparent"} fontSize={"14px"} w={"80%"} p={"8px"} />
+                            <Box p={"8px 16px"} as="button" fontSize={"16px"} borderRadius={"26.897px"} cursor={
+                              "pointer"
+                            } width={"200px"} border={"none"} color={"#fff"} bg={"#272e5c"}>
+                            Request Demo
+                            </Box>
+                          </FormControl>
+                      </Box>
+                      <Box display={"flex"} border={"2px solid #fcfbf7"} borderRight={0} borderLeft={0} alignItems={"flex-end"} justifyContent={"center"} w={"49%"} p={"4rem 0"}>
+                              <Image maxW={"100%"} src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmap_2_white.1bdb3808.png&w=750&q=75" alt="map"/>
+                      </Box>
       </Box>
     </Box>
     

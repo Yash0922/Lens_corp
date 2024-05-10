@@ -1,8 +1,12 @@
+
 import React, { useState } from "react";
 import { Box, Text, Button, Heading, Image,AspectRatio  } from "@chakra-ui/react";
 import { css, keyframes } from '@emotion/react';
 import { ArrowForwardIcon,CheckIcon} from "@chakra-ui/icons";
 import { color, transform } from "framer-motion";
+import  GroupIcon  from '../assets/groupIcon.svg';
+import  SecurityIcon  from '../assets/securityIcon.svg';
+import  WeightIcon  from '../assets/WeightIIcon.svg';
 import ServiceBox from "../components/ServiceBox";
 
 const imageAnimation1 = keyframes`0% {opacity: 0;} 25% {opacity: 1;} 50% {opacity: 0;} 75% {opacity: 0;} 100% {opacity: 0;}`;
@@ -692,7 +696,78 @@ function Home(props) {
           ))}
         </Box>
       </Box>
+      <Box className="SixthContainer" display={"grid"} placeItems={"center"} pb={"7rem"} bg={"#fcfbf7"}>
+          <Box className="visionHead" display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"} gap={"5px"}>
+              <Heading as={"h3"} color={"#000"} textAlign={"center"} fontSize={"20px"} m={0} textTransform={"uppercase"} letterSpacing={"1.9px"} fontWeight={"600"}>
+              OUR VISION
+              </Heading>
+              <Box w={"75px"} h={"4px"} borderRadius={"1000px"}
+            bg={
+              "linear-gradient(54deg, rgba(0,145,255,1) 0%, rgba(156,254,255,1) 100%)"
+            }></Box>
+          </Box>
+          <Text className="paragraphAI" fontFamily={"Poppins,sans-serif"} w={"65%"} m={"1rem 0"} textAlign={"center"} fontSize={"58px"} fontWeight={"500"} fontStyle={"normal"}>AI for Social Good</Text>
+          <Text className="paragrph2" fontFamily={"Poppins,sans-serif"} color={"#8a8a8a"} textAlign={"center"} fontSize={"20px"} mb={"4rem"} width={"58%"} lineHeight={"29.58px"}>
+          Explainable AI (XAI) is an emerging subject of machine learning research that refers to strategies that try to provide transparency to typically opaque AI models and their predictions.
+          </Text>
+          <Box className="lienGride" display={"grid"}  gridTemplateColumns={".5fr"} justifyContent={"center"}>
+              <Box className="box-6">
+                <Box className="Box-m-6" display={"grid"} gridTemplateColumns={"1fr max-content 1fr"} gridColumnGap={"1.5rem"} columnGap={"1.5rem"} w={"100%"} fontFamily={"'Poppins'"} 
+                  
+                >
+                  <Box _hover={{
+                    transform: "scale(1.05)",
+                    transition: "0.4s",
+                  }}>
+                    <Heading  as={"h3"} fontSize={"28px"} fontFamily={"'Poppins'"} fontWeight={"600"}>Diversity & Fairness</Heading>
+                    <Text as={"span"} display={"inline-block"} fontFamily={"'Poppins'"} fontSize={"16px"} m={"1rem 0"} color={"#8a8a8a"}transition={".3"}>When training our AI models, we consider ethical and social implications of algorithm-based decision making. Our solutions use high-quality and fairly-represented data sets to eliminate human cognitive biases.</Text>
+                  </Box>
+                  <Box className="icon-1">
+                    <Text as={"span"} display={"inline-block"} bg={"#fcfbf7"} borderRadius={"29.297px"} border={"4px solid #717171"} p={"4px"}>
+                      <Image src={GroupIcon}/>
+                    </Text>
+                    <Text  as={"span"} display={"block"} w={"0"} height={"85%"} borderLeft={"2px dashed #717171"} transform={"translate(27.5px,-3px)"}></Text>
+                  </Box>
+                </Box>
+                <Box className="Box-m-6" display={"grid"} gridTemplateColumns={"1fr max-content 1fr"} gridColumnGap={"1.5rem"} columnGap={"1.5rem"} w={"100%"} fontFamily={"'Poppins'"}>
+                  <Box></Box>
+                  <Box className="icon-1">
+                    <Text as={"span"} display={"inline-block"} bg={"#fcfbf7"} borderRadius={"29.297px"} border={"4px solid #717171"} p={"4px"}>
+                      <Image src={SecurityIcon}/>
+                    </Text>
+                    <Text  as={"span"} display={"block"} w={"0"} height={"85%"} borderLeft={"2px dashed #717171"} transform={"translate(27.5px,-3px)"}></Text>
+                  </Box>
+                  <Box _hover={{
+                    transform: "scale(1.05)",
+                    transition: "0.4s",
+                  }}>
+                 
+                    <Heading as={"h3"} fontSize={"28px"} fontFamily={"'Poppins'"} fontWeight={"600"} >Regulatory Compliance</Heading>
+                    <Text as={"span"} display={"inline-block"} fontFamily={"'Poppins'"} fontSize={"16px"} m={"1rem 0"} color={"#8a8a8a"}transition={".3"}>Working with clients globally, LENS acknowledges applicable data privacy regulations, such as the GDPR, HIPAA and others, in all our solutions handling sensitive data. We also ensure our algorithms allow for the required level of decision-making transparency and explainability.</Text>
+                  </Box>
+                 
+                  
+                </Box>
+                <Box className="Box-m-6" display={"grid"} gridTemplateColumns={"1fr max-content 1fr"} gridColumnGap={"1.5rem"} columnGap={"1.5rem"} w={"100%"} fontFamily={"'Poppins'"}>
+                  <Box _hover={{
+                    transform: "scale(1.05)",
+                    transition: "0.4s",
+                  }}>
+                    <Heading as={"h3"} fontSize={"28px"} fontFamily={"'Poppins'"} fontWeight={"600"} >Code of Ethics</Heading>
+                    <Text as={"span"} display={"inline-block"} fontFamily={"'Poppins'"} fontSize={"16px"} m={"1rem 0"} color={"#8a8a8a"}transition={".3"}>LENS believes in a just, non-violent world of equality and fairness. We prize democratic values, civil liberties and open and informed debate. When used to further these values, algorithm-based decision-making models can continue to make the world a safer, better place for everyone.</Text>
+                  </Box>
+                  <Box className="icon-1">
+                    <Text as={"span"} display={"inline-block"} bg={"#fcfbf7"} borderRadius={"29.297px"} border={"4px solid #717171"} p={"4px"}>
+                      <Image src={WeightIcon}/>
+                    </Text>
+                    <Text  as={"span"} display={"block"} w={"0"} height={"85%"} borderLeft={"2px dashed #717171"} transform={"translate(27.5px,-3px)"}></Text>
+                  </Box>
+                </Box>
+              </Box>
+          </Box>
+      </Box>
     </Box>
+    
   );
 }
 

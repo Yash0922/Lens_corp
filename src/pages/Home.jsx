@@ -2,10 +2,64 @@ import React, { useState } from "react";
 import { Box, Text, Button, Heading, Image } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { color, transform } from "framer-motion";
-
+import ServiceBox from "../components/ServiceBox";
 function Home(props) {
   const [isHovered, setIsHovered] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
+ 
+  const serviceData = [
+    {
+      id: 1,
+      title: "Biometrics",
+      description:
+        "Academia-backed & In-house researched State-of-the-Art Face, Fingerprint, and Iris Recognition SDKs. Enable real-time automated Biometric applications on edge devices even without an active internet connection.",
+      textColor: "rgb(1, 201, 155)",
+      hoverColor: "rgb(1, 201, 155)",
+      hoverOutlineColor: "rgb(1, 201, 155)",
+      blurColor: "#01c99b",
+      blurTop: "-40px",
+      blurLeft: "-40px",
+      blurClassName: "greenBlur",
+    },
+    {
+      id: 2,
+      title: "Image Analysis",
+      description:
+        "Outsource the overly complex image analysis work to our intelligent machines that adaptively learn, so you can focus on making the best decisions for your business.",
+      textColor: "rgb(63, 189, 241)",
+      hoverColor: "rgb(63, 189, 241)",
+      hoverOutlineColor: "rgb(63, 189, 241)",
+      blurColor: "#00b2fc",
+      blurTop: "-50px",
+      blurRight: "-90px",
+      blurClassName: "blueBlur",
+    },
+    {
+      id: 3,
+      title: "Cross-Media Translation",
+      description:
+        "Will something like Siri or Alexa enhance your business? We can deliver text-to-speech, text-to-image, speech-to-text, speech-to-image, speech-to-image, image-to-text and image-to-speech solutions for maximum convenience.",
+      textColor: "rgb(255, 96, 95)",
+      hoverColor: "rgb(255, 96, 95)",
+      hoverOutlineColor: "rgb(255, 96, 95)",
+      blurColor: "#ff6160",
+      blurBottom: "-100px",
+      blurClassName: "redBlur",
+    },
+    {
+      id: 4,
+      title: "3D Modelling and Design.",
+      description:
+        "We offer services for automated generation of 3D assets with realistic shapes and textures. We animate the 3D models with voice and videos with an aim to retarget voice and/or expressions with pose from a single Image/video.",
+      textColor: "rgb(255, 159, 49)",
+      hoverColor: "rgb(255, 159, 49)",
+      hoverOutlineColor: "rgb(255, 159, 49)",
+      blurColor: "#fbc976",
+      blurRight: "-70px",
+      blurClassName: "yelloBlur",
+    },
+  ]
+
   return (
     <Box>
       <Box
@@ -245,6 +299,11 @@ function Home(props) {
             }></Box>
         </Box>
         <Text w={"80%"} fontFamily={"Poppins,sans-serif"} textAlign={"center"} fontSize={"58px"} fontStyle={"normal"} fontWeight={"400"} m={"58px 0px 80px"} lineHeight={"normal"}>We provide Artificial Intelligence Services</Text>
+        <Box display={"grid"} gridTemplateColumns={"repeat(2,1fr)"} gridGap={"20px"}>
+          {serviceData.map((data, index) => (
+            <ServiceBox key={index} data={data} />
+          ))}
+        </Box>
       </Box>
     </Box>
   );

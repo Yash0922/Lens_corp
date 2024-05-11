@@ -1,8 +1,16 @@
 
-.custom-scrollbar::-webkit-scrollbar {
-  width: 10px;
+::-webkit-scrollbar {
+  width: 5px;
 }
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: red;
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background-color: transparent;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(54deg, #0091ff 0, #9cfeff 100%); 
   border-radius: 10px;
 }

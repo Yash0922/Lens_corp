@@ -1,6 +1,14 @@
 
 import React, { useState } from "react";
-import { Box, Text, Button, Heading, Image,AspectRatio,FormControl,Input
+import {   Box,
+  Text,
+  Button,
+  Heading,
+  Image,
+  AspectRatio,
+  FormControl,
+  Input,
+  useMediaQuery,
     } from "@chakra-ui/react";
 import { css, keyframes } from '@emotion/react';
 import { ArrowForwardIcon,CheckIcon,ChevronDownIcon} from "@chakra-ui/icons";
@@ -73,6 +81,10 @@ function Home(props) {
   const [isHovered2, setIsHovered2] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdownId, setOpenDropdownId] = useState(null);
+
+
+  const [isSmallScreen] = useMediaQuery("(max-width: 767px)");
+  const [isMediumScreen] = useMediaQuery("(min-width: 768px) and (max-width: 1023px)");
 
   const toggleOpen = () => {
     setIsOpen(!isOpen);
@@ -206,8 +218,9 @@ function Home(props) {
         bgPosition="center"
         bgRepeat="no-repeat"
         bgSize="cover"
-        h="80vh"
-        p={"10%"}
+           height={isSmallScreen ? "auto" : "80vh"}
+           px={isSmallScreen ? "5%" : "15%"}
+           py={isSmallScreen ? "10%" : "10%"}
         pl={"15%"}
         d="flex"
         flexDirection="column"
@@ -270,6 +283,7 @@ function Home(props) {
 
       <Box
         className="secondContainer"
+        py={isSmallScreen ? "2rem" : undefined}
         p={"5rem 0"}
         w={"100%"}
         display={"flex"}
@@ -280,7 +294,8 @@ function Home(props) {
         <Box
           className="sec-one"
           display={"flex"}
-          flexDirection={"column"}
+          flexDirection={isSmallScreen ? "row-reverse" : "column"}
+          w={isSmallScreen ? "90%" : "80%"}
           justifyContent={"center"}
           alignItems={"center"}
           gap={"5px"}
@@ -437,7 +452,7 @@ function Home(props) {
             }></Box>
         </Box>
         <Text w={"80%"} fontFamily={"Poppins,sans-serif"} textAlign={"center"} fontSize={"58px"} fontStyle={"normal"} fontWeight={"400"} m={"58px 0px 80px"} lineHeight={"normal"}>We provide Artificial Intelligence Services</Text>
-        <Box display={"grid"} gridTemplateColumns={"repeat(2,1fr)"} gridGap={"20px"}>
+        <Box display={"grid"}  gridTemplateColumns={isSmallScreen ? "1fr" : "repeat(2, 1fr)"} gridGap={"20px"}>
           {serviceData.map((data, index) => (
             <ServiceBox key={index} data={data} />
           ))}
@@ -701,7 +716,7 @@ function Home(props) {
         {/*  borderColor={'red'} borderWidth={'2px'} */}
 
 
-        <Box display={'flex'} justifyContent={'center'} gap={4} flexWrap={'wrap'} margin={'5rem 0'}>
+        <Box display={'flex'} justifyContent={'center'} gap={4} flexWrap={isSmallScreen ? "wrap" : "nowrap"} margin={'5rem 0'}>
           {cardsData.map((card) => (
             <Box key={card.id}
               css={{
@@ -897,11 +912,12 @@ function Home(props) {
           <Box
             className="dropdowbox"
             display={"flex"}
-            flexDirection={"row"}
+            flexDirection={isSmallScreen ? "column" : "row"}
             justifyContent={"center"}
             gap={"2rem"}
+            alignItems={isSmallScreen ? "center" : undefined}
           >
-            <Box className="box-sized" w="38rem">
+            <Box className="box-sized"  w={isSmallScreen ? "100%" : "38rem"} mb={isSmallScreen ? "2rem" : undefined}>
               {dropdownData.slice(0, 3).map((data) => (
                 <Box key={data.id} onClick={() => toggleDropdown(data.id)}>
                   <Heading
@@ -957,7 +973,7 @@ function Home(props) {
                 </Box>
               ))}
             </Box>
-            <Box className="box-sized" w="38rem">
+            <Box className="box-sized"  w={isSmallScreen ? "100%" : "38rem"} mb={isSmallScreen ? "2rem" : undefined}>
               {dropdownData.slice(3).map((data)=> (
                 <Box key={data.id} onClick={() => toggleDropdown(data.id)}>
                   <Heading
@@ -1016,8 +1032,9 @@ function Home(props) {
           </Box>
           </Box>
       </Box>
-      <Box className="EleventhContainer" display={"flex"}  bg={"#fcfbf7"} fontFamily={"'Poppins'"}>
-                      <Box display={"flex"} flexDirection={"column"} alignItems={"flex-start"} w={"50%"} p={"5rem 5rem 5rem 7rem"} bg={"#fcfbf7"} justifyContent={"center"} >
+      <Box className="EleventhContainer" display={"flex"}  bg={"#fcfbf7"} fontFamily={"'Poppins'"}   flexDirection={isSmallScreen ? "column" : "row"}>
+                      <Box display={"flex"} flexDirection={"column"} alignItems={"flex-start"}  w={isSmallScreen ? "100%" : "50%"}
+          p={isSmallScreen ? "2rem" : "5rem 5rem 5rem 7rem"} bg={"#fcfbf7"} justifyContent={"center"} >
                           <Heading fontFamily={"Raleway,sans-serif"} w={"70%"} as={"h2"} fontSize={"56px"} mb={"1rem"} lineHeight={"66.102px"} fontWeight={500}>Get in touch with us</Heading>
                           <Text fontSize={"17.488px"} fontFamily={"'Poppins'"} letterSpacing={".525px"} mb={"2rem"}>Send your enquiry now!</Text>
                           <FormControl display={"flex"} bg={"#ededed"} w={"80%"} alignItems={"center"} justifyContent={"space-between"} p={"4.034px 4.034px 4.034px 20.172px"} borderRadius={"26.897px"}>
@@ -1029,7 +1046,8 @@ function Home(props) {
                             </Box>
                           </FormControl>
                       </Box>
-                      <Box display={"flex"} border={"2px solid #fcfbf7"} borderRight={0} borderLeft={0} alignItems={"flex-end"} justifyContent={"center"} w={"49%"} p={"4rem 0"}>
+                      <Box display={"flex"} border={"2px solid #fcfbf7"} borderRight={0} borderLeft={0} alignItems={"flex-end"} justifyContent={"center"}w={isSmallScreen ? "100%" : "49%"}
+          p={isSmallScreen ? "2rem 0" : "4rem 0"}>
                               <Image maxW={"100%"} src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmap_2_white.1bdb3808.png&w=750&q=75" alt="map"/>
                       </Box>
       </Box>

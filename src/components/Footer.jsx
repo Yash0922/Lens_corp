@@ -98,18 +98,55 @@ function Footer(props) {
             </Box>
           </Box>
           <Box display={"flex"} fontFamily={"'Poppins'"} flexDirection={"column"} justifyContent={"center"} alignItems={"flex-start"}>
-                <Text as={"span"} fontSize={"16px"} fontWeight={"600"} letterSpacing={"2.88px"}mb={"2rem"} >SITEMAP</Text>
-                <Text as={"span"} fontSize={"15px"} fontWeight={"400"} lineHeight={"24px"} m={".25rem 0"} cursor={"pointer"}> MakeMyWeb.</Text>
-                <Text as={"span"} fontSize={"15px"} fontWeight={"400"} lineHeight={"24px"} m={".25rem 0"} cursor={"pointer"}> Services</Text>
-                <Text as={"span"} fontSize={"15px"} fontWeight={"400"} lineHeight={"24px"} m={".25rem 0"} cursor={"pointer"}> Products</Text>
-                <Text as={"span"} fontSize={"15px"} fontWeight={"400"} lineHeight={"24px"} m={".25rem 0"} cursor={"pointer"}> Blogs</Text>
-                <Text as={"span"} fontSize={"15px"} fontWeight={"400"} lineHeight={"24px"} m={".25rem 0"} cursor={"pointer"}>Life at LENS</Text>
+                <Text as={"span"} fontSize={"16px"} fontWeight={"600"} letterSpacing={"2.88px"}mb={"2rem"}  >SITEMAP</Text>
+                <Text as={"span"} fontSize={"15px"} fontWeight={"400"} lineHeight={"24px"} m={".25rem 0"} _hover={{
+                  background: "linear-gradient(54deg,#0091ff,#9cfeff)",
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }} cursor={"pointer"}> MakeMyWeb.</Text>
+                <Text as={"span"} fontSize={"15px"} fontWeight={"400"} lineHeight={"24px"} m={".25rem 0"} _hover={{
+                  background: "linear-gradient(54deg,#0091ff,#9cfeff)",
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }} cursor={"pointer"}> Services</Text>
+                <Text as={"span"} fontSize={"15px"} fontWeight={"400"} lineHeight={"24px"} m={".25rem 0"} 
+                _hover={{
+                  background: "linear-gradient(54deg,#0091ff,#9cfeff)",
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }} cursor={"pointer"}> Products</Text>
+                <Text as={"span"} fontSize={"15px"} fontWeight={"400"} lineHeight={"24px"} m={".25rem 0"} 
+                _hover={{
+                  background: "linear-gradient(54deg,#0091ff,#9cfeff)",
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }} cursor={"pointer"}> Blogs</Text>
+                <Text as={"span"} fontSize={"15px"} fontWeight={"400"} lineHeight={"24px"} m={".25rem 0"} _hover={{
+                  background: "linear-gradient(54deg,#0091ff,#9cfeff)",
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }} cursor={"pointer"}>Life at LENS</Text>
           </Box>
           <Box display={"flex"} fontFamily={"'Poppins'"} flexDirection={"column"} justifyContent={"center"} alignItems={"flex-start"}>
                 <Text as={"span"} fontSize={"16px"} fontWeight={"600"} letterSpacing={"2.88px"}mb={"2rem"} >CONNECT</Text>
-                <Text as={"span"} fontSize={"15px"} fontWeight={"400"} lineHeight={"24px"} m={".25rem 0"} cursor={"pointer"}> +1-517-9300-792</Text>
-                <Text as={"span"} fontSize={"15px"} fontWeight={"400"} lineHeight={"24px"} m={".25rem 0"} cursor={"pointer"}> +91-9990-736-796</Text>
-                <Text as={"span"} fontSize={"15px"} fontWeight={"400"} lineHeight={"24px"} m={".25rem 0"} cursor={"pointer"}> solutions@lenscorp.ai</Text>
+                <Text as={"span"} fontSize={"15px"} fontWeight={"400"} lineHeight={"24px"} m={".25rem 0"}
+                _hover={{
+                  background: "linear-gradient(54deg,#0091ff,#9cfeff)",
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }} cursor={"pointer"}> +1-517-9300-792</Text>
+                <Text as={"span"} fontSize={"15px"} fontWeight={"400"} lineHeight={"24px"} m={".25rem 0"}
+                _hover={{
+                  background: "linear-gradient(54deg,#0091ff,#9cfeff)",
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }} cursor={"pointer"}> +91-9990-736-796</Text>
+                <Text as={"span"} fontSize={"15px"} fontWeight={"400"} lineHeight={"24px"} m={".25rem 0"}
+                _hover={{
+                  background: "linear-gradient(54deg,#0091ff,#9cfeff)",
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }} cursor={"pointer"}> solutions@lenscorp.ai</Text>
            
           </Box>
         </Box>

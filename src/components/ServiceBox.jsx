@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Box, Text, Heading } from "@chakra-ui/react";
+import { Box, Text, Heading,useColorMode } from "@chakra-ui/react";
 
 const ServiceBox = ({ data }) => {
   const [isHovered, setIsHovered] = useState(false);
-
+  const { colorMode } = useColorMode();
   return (
     <Box
       display={"flex"}
@@ -32,7 +32,7 @@ const ServiceBox = ({ data }) => {
           bg: "transparent",
           outline: `${data.hoverOutlineColor} solid 1px`,
         }}
-        bg={"#fff"}
+        bg={colorMode === 'light'?"#fff":"#1b1c1e"}
         position={"relative"}
         overflow={"hidden"}
         w={"470px"}

@@ -8,6 +8,7 @@ import {
   AspectRatio,
   FormControl,
   Input,
+  useColorMode
 } from "@chakra-ui/react";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -16,11 +17,13 @@ import { FaDiscord } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 function Footer(props) {
+
+  const { colorMode } = useColorMode();
   return (
     <Box>
       <Box
         className="footerTop"
-        bg={"#fcfbf7"}
+        bg={colorMode === "light" ?"#fcfbf7":""}
         display={"flex"}
         alignItems={"center"}
         justifyContent={"center"}
@@ -44,9 +47,9 @@ function Footer(props) {
               mt={"5px"}
               color={"transparent"}
               mb={"10px"}
-              src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fnav_logo.e5fb945a.png&w=96&q=75"
+              src={colorMode === "light" ?"https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fnav_logo.e5fb945a.png&w=96&q=75":"https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FnewLogo.9985891c.png&w=256&q=75"}
             />
-            <Text as={"span"} mb={"3rem"} color={"#000"}>
+            <Text as={"span"} mb={"3rem"} >
               Tomorrow's Vision, Today!
             </Text>
             <Box
@@ -151,7 +154,7 @@ function Footer(props) {
           </Box>
         </Box>
       </Box>
-      <Box className="footerBottom" bg={"#272e5c"} color={"#fff"} fontSize={"15px"} fontFamily={"'Poppins'"} w={"100%"} justifyContent={"center"} alignItems={"center"} display={"flex"} letterSpacing={"1.35px"}>
+      <Box className="footerBottom" bg={colorMode === "light" ?"#272e5c":"#242424"} color={"#fff"} fontSize={"15px"} fontFamily={"'Poppins'"} w={"100%"} justifyContent={"center"} alignItems={"center"} display={"flex"} letterSpacing={"1.35px"}>
                     <Box w={"85%"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} p={"40px 0"}>
                         <Text as={"span"} color={"rgb(153, 153, 153)"} fontSize={"15px"} letterSpacing={"1.35px"}>
                         2023 <Text as={"span"} color={"white"}>LENS, Inc. </Text>

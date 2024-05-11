@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Box, Text, Button, Heading, Image,AspectRatio,FormControl,Input
     } from "@chakra-ui/react";
 import { css, keyframes } from '@emotion/react';
-import { ArrowForwardIcon,CheckIcon} from "@chakra-ui/icons";
+import { ArrowForwardIcon,CheckIcon,ChevronDownIcon} from "@chakra-ui/icons";
 
 import  GroupIcon  from '../assets/groupIcon.svg';
 import  SecurityIcon  from '../assets/securityIcon.svg';
@@ -29,9 +29,58 @@ const imageAnimation3 = keyframes`0% { opacity: 0; } 25% { opacity: 0; } 50% { o
     opacity: 0;
   }
 `;
+
+const dropdownData = [
+  {
+    id: 1,
+    question: "Do I need to sign a contract?",
+    answer:
+      "We will first work with you to comprehend your requirements in detail. Thereafter, we would draft an agreement with proposed solutions.After assessing possible challenges and pitfalls and identifying ways to overcome them, we will jointly sign an agreement, not a binding contract.",
+  },
+  {
+    id: 2,
+    question: "How do we ensure quality of deliverables?",
+    answer:
+      "We are researchers, first. We thoroughly benchmark our proposed solutions against internal and public datasets and baselines after each development sprint. After final delivery, we will continuously enhance our delivery based on your feedbacks.",
+  },
+  {
+    id: 3,
+    question: "How do I begin collaboration?",
+    answer:
+      "Please contact us at solutions@lenscorp.ai. We usually respond within 24 Hrs..",
+  },
+  {
+    id: 4,
+    question: "What sevices do we offer?",
+    answer:
+      "We build accurate and efficient AI systems for your business. Our ethically-trained solutions are paving a new path forward to create explainable, transparent, and easily customizable. In addition, we grant ownership of all copyrights to the system, software, and model to you.",
+  },
+  {
+    id: 5,
+    question: "How do you ensure user privacy?",
+    answer:
+      "We do not share, sell, or rent your competitive information (including any and all data) to any third party.Since we grant exclusive Intellectual Property Rights back to you, we have no intention of violating any user privacy.",
+  },
+  {
+    id: 6,
+    question: "How can I pay for the services?",
+    answer:
+      "We split the entire project into multiple milestones.We work on an advanced milestone payment basis with an option to drop off remaining milestones anytime.",
+  },
+];
 function Home(props) {
   const [isHovered, setIsHovered] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [openDropdownId, setOpenDropdownId] = useState(null);
+
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const toggleDropdown = (id) => {
+    setOpenDropdownId(openDropdownId === id ? null : id);
+  };
   const cardsData = [
     {
       id: 1,
@@ -139,6 +188,8 @@ function Home(props) {
       blurClassName: "yelloBlur",
     },
   ]
+
+  
   const gradientAnimation = keyframes`
   0% {
     background-position: 0;
@@ -830,6 +881,140 @@ function Home(props) {
                         </Box>
                       </Box>
                     </Box>
+      </Box>
+      <Box className="TenthContainer" bg={"#fcfbf7"} display={"grid"} placeItems={"center"} p={"4rem 0"} fontFamily={"Poppins,sans-serif"}>
+<Box className="visionHead" display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"} gap={"5px"}>
+              <Heading as={"h3"} color={"#000"} textAlign={"center"} fontSize={"20px"} m={0} textTransform={"uppercase"} letterSpacing={"1.9px"} fontWeight={"600"}>
+              GET TO KNOW US
+              </Heading>
+              <Box w={"75px"} h={"4px"} borderRadius={"1000px"}
+            bg={
+              "linear-gradient(54deg, rgba(0,145,255,1) 0%, rgba(156,254,255,1) 100%)"
+            }></Box>
+          </Box>
+          <Text fontSize={"58px"} fontWeight={"500"} width={"65%"} margin={"1rem 0"} textAlign={"center"}>Frequently Asked Questions</Text>
+          <Box>
+          <Box
+            className="dropdowbox"
+            display={"flex"}
+            flexDirection={"row"}
+            justifyContent={"center"}
+            gap={"2rem"}
+          >
+            <Box className="box-sized" w="38rem">
+              {dropdownData.slice(0, 3).map((data) => (
+                <Box key={data.id} onClick={() => toggleDropdown(data.id)}>
+                  <Heading
+                    as="h2"
+                    fontFamily="Raleway,sans-serif"
+                    fontSize="1.5em"
+                    marginBlockStart="0.83em"
+                    display="block"
+                    marginBlockEnd="0.83em"
+                    marginInlineStart="0px"
+                    marginInlineEnd="0px"
+                    fontWeight="bold"
+                  >
+                    <Box
+                      as="button"
+                      display="flex"
+                      alignItems="center"
+                      border="1px solid rgba(0,0,0,.6)"
+                      pr="1rem"
+                      borderRadius="10px"
+                      mt="1rem"
+                      w="100%"
+                      outlineOffset="2px"
+                      outline="2px solid transparent"
+                    >
+                      <Box
+                        textAlign="left"
+                        flex="1"
+                        fontSize="17px"
+                        p=".75rem 1rem"
+                        fontWeight="300"
+                      >
+                        {data.question}
+                      </Box>
+                      <ChevronDownIcon />
+                    </Box>
+                  </Heading>
+                  <Box
+                    overflow="hidden"
+                    display={openDropdownId === data.id ? "block" : "none"}
+                    opacity={openDropdownId === data.id ? "1" : "0"}
+                    height={openDropdownId === data.id ? "auto" : "0px"}
+                  >
+                    <Box
+                      pb="4px"
+                      fontSize="15px"
+                      color="rgba(0,0,0,.6)"
+                      transition="all 0.5s"
+                    >
+                      {data.answer}
+                    </Box>
+                  </Box>
+                </Box>
+              ))}
+            </Box>
+            <Box className="box-sized" w="38rem">
+              {dropdownData.slice(3).map((data)=> (
+                <Box key={data.id} onClick={() => toggleDropdown(data.id)}>
+                  <Heading
+                    as="h2"
+                    fontFamily="Raleway,sans-serif"
+                    fontSize="1.5em"
+                    marginBlockStart="0.83em"
+                    display="block"
+                    marginBlockEnd="0.83em"
+                    marginInlineStart="0px"
+                    marginInlineEnd="0px"
+                    fontWeight="bold"
+                  >
+                    <Box
+                      as="button"
+                      display="flex"
+                      alignItems="center"
+                      border="1px solid rgba(0,0,0,.6)"
+                      pr="1rem"
+                      borderRadius="10px"
+                      mt="1rem"
+                      w="100%"
+                      outlineOffset="2px"
+                      outline="2px solid transparent"
+                    >
+                      <Box
+                        textAlign="left"
+                        flex="1"
+                        fontSize="17px"
+                        p=".75rem 1rem"
+                        fontWeight="300"
+                      >
+                        {data.question}
+                      </Box>
+                      <ChevronDownIcon />
+                    </Box>
+                  </Heading>
+                  <Box
+                    overflow="hidden"
+                    display={openDropdownId === data.id ? "block" : "none"}
+                    opacity={openDropdownId === data.id ? "1" : "0"}
+                    height={openDropdownId === data.id ? "auto" : "0px"}
+                  >
+                    <Box
+                      pb="4px"
+                      fontSize="15px"
+                      color="rgba(0,0,0,.6)"
+                      transition="all 0.5s"
+                    >
+                      {data.answer}
+                    </Box>
+                  </Box>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+          </Box>
       </Box>
       <Box className="EleventhContainer" display={"flex"}  bg={"#fcfbf7"} fontFamily={"'Poppins'"}>
                       <Box display={"flex"} flexDirection={"column"} alignItems={"flex-start"} w={"50%"} p={"5rem 5rem 5rem 7rem"} bg={"#fcfbf7"} justifyContent={"center"} >

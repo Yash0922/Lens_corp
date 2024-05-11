@@ -89,7 +89,7 @@ const Navbar = () => {
 
      console.log("active",activeLink)
   return (
-    <>
+  
     <Box bg={colorMode === 'light'?useColorModeValue('#FFFFFF'):"black"} px={4} zIndex={"99"} position={"fixed"}  top={"0"} left={"0"}w={"100%"}
      transition="transform 0.3s ease-in-out"
      transform={isNavbarVisible ? "translateY(0)" : "translateY(-100%)"}
@@ -155,7 +155,7 @@ const Navbar = () => {
           </Box>
         ) : null}
     </Box>
-  </>
+  
   );
 };
 

@@ -11,6 +11,7 @@ import {
   useColorMode,
   useMediaQuery,
 } from "@chakra-ui/react";
+
 import { css, keyframes } from "@emotion/react";
 import {
   ArrowForwardIcon,
@@ -102,6 +103,8 @@ function Home(props) {
   const [isMediumScreen] = useMediaQuery(
     "(min-width: 768px) and (max-width: 1023px)"
   );
+  const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
+
 
   const toggleDropdown = (id) => {
     setOpenDropdownId(openDropdownId === id ? null : id);
@@ -276,12 +279,12 @@ function Home(props) {
   }
 `;
   return (
-    <Box>
+    <Box bg={colorMode === "light" ? "" : "black"} w={"100%"} className="custom-scrollbar">
       <Box
         className="firstContainer"
         w={"100%"}
-        h={"100v"}
-        mb={"9.1rem"}
+        h={"80vh"}
+        
         overflow={"hidden"}
         display={"grid"}
         placeContent={"center"}
@@ -293,7 +296,7 @@ function Home(props) {
             top={"0"}
             left={"0"}
             w={"100%"}
-            h={"70vh"}
+            h={"80vh"}
             objectFit={"cover"}
             src="https://lenscorp.ai/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdetwrhe0k%2Fimage%2Fupload%2Fv1691730929%2Flenscorp-website%2FDesktop_-_23_u3ypg0.jpg&w=256&q=75"
           />
@@ -308,7 +311,7 @@ function Home(props) {
             style={{
               objectFit: "cover",
               width: "100%",
-              height: "65vh",
+              height: "70vh",
               position: "absolute",
               top: 70,
               left: 0,
@@ -322,7 +325,6 @@ function Home(props) {
           justifyContent={"center"}
           width={"50%"}
           mr={"8rem"}
-          mt={"8.5rem"}
           zIndex={"20"}
         >
           <Heading
@@ -968,7 +970,7 @@ function Home(props) {
           display={"flex"}
           justifyContent={"center"}
           gap={4}
-          flexWrap={isSmallScreen ? "wrap" : "nowrap"}
+          flexWrap={"wrap" }
           margin={"5rem 0"}
         >
           {cardsData.map((card) => (
@@ -993,7 +995,7 @@ function Home(props) {
                 position={"absolute"}
               />
               <Box
-                w={"335px"}
+                w={isLargerThan800 ? "335px" : "100%"}
                 h={"435px"}
                 bg={colorMode === "light" ? "#fff" : "#1b1c1e"}
                 padding={"1.6rem"}
@@ -1341,9 +1343,9 @@ function Home(props) {
         </Text>
 
         <Box
-          width={"60%"}
+          width={isLargerThan800 ? "60%" : "100%"}
           display={"grid"}
-          gridTemplateColumns={"1fr 1fr"}
+          gridTemplateColumns={isLargerThan800 ? "1fr 1fr" : "1fr"}
           gridGap={"20px"}
         >
           {boxData.map((box) => (

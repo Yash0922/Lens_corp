@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
+import { MotionConfig } from 'framer-motion';
 import './index.css'
 import {
   ChakraBaseProvider,
@@ -15,10 +16,12 @@ const theme = extendBaseTheme({
   },
 })
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <MotionConfig>
     <ChakraBaseProvider  theme={theme}>
+    
     <App />
+   
     </ChakraBaseProvider>
-
-  </React.StrictMode>,
+    </MotionConfig>
+    ,
 )

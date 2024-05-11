@@ -7,9 +7,13 @@ import { MotionConfig } from 'framer-motion';
 function App() {
   return (
     <>
-     <MotionConfig>
+       
+   
+      <MotionConfig>
       <AppRouter />
       </MotionConfig>
+      
+     
     </>
   );
 }

@@ -506,9 +506,9 @@ function Home(props) {
               borderColor={colorMode === "light" ? "#000" : "#fff"}
               color={colorMode === "light" ? "#000" : "#fff"}
               _hover={{
-                bg: "#000",
+                bg: colorMode === "light" ? "#000":"#fff",
                 borderColor: "#000",
-                color: "#fff",
+                color:colorMode === "light" ?  "#fff":"#000",
                 p: "10px 20px",
               }}
               _active={{
